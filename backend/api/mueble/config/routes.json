@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/muebles",
+      "handler": "mueble.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/muebles/count",
+      "handler": "mueble.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/muebles/:id",
+      "handler": "mueble.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/muebles",
+      "handler": "mueble.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/muebles/:id",
+      "handler": "mueble.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/muebles/:id",
+      "handler": "mueble.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

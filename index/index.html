@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mueblería Morales</title>
+        <link rel="stylesheet" href="../css/estilos.css">
+    </head>
+
+    <body class="main-body">
+
+
+        <section class="contenedor">
+            
+            <div class="div__presentacion">
+                <h1>MUEBLERIA ******</h1>
+                <h2>SOMOS TU MEJOR OPCIÓN</h2>
+            </div>
+
+            <div class="div1">
+                <div class="btn">
+                    <button id="btn__inicio">Iniciar sesión</button>
+                    <button id="btn__registro">Registrate</button>
+                </div>
+
+                <p class="p__inicio" id="p__inicio">INICIA SESÓN</p>
+                <p class="p__registro" id="p__registro" hidden>REGISTRATE</p>
+    
+                <div class="formulario">
+                    
+                    <div id="form1">
+                        <form class="contenedor__form" id="contenedor__form" action="muebles.html">
+                            <label for="contenedor__input-email">Email:</label>
+                            <input type="email" id="contenedor__input-email" name="email" class="contenedor__input" placeholder="Ingrese su email" >
+            
+                            <label for="contenedor__input-password">Password:</label>
+                            <input type="password" id="contenedor__input-password" name="password" class="contenedor__input" placeholder="Ingrese su password"> 
+                            <button id="btnIngresar" class="contenedor__submit">Ingresar</button>
+                        </form>
+                    </div>
+                   
+        
+                    <div id="form2" hidden>
+                        <form class="contenedor-2__form" id="contenedor-2__form" action="muebles.html">
+                            <label for="contenedor-2__input-email">Email:</label>
+                            <input type="email" id="contenedor-2__input-email" name="inputEmail" class="contenedor-2__input" placeholder="Ingrese su email">
+        
+                            <label for="contenedor-2__input-password">Password:</label>
+                            <input type="password" id="contenedor-2__input-password" name="inputPassword2" class="contenedor-2__input" placeholder="Ingrese su password">
+        
+                            <label for="">Confirme password:</label>
+                            <input type="password" id="contenedor-2__input-passwordC" name="inputPassword2C" class="contenedor-2__input" placeholder="Confirmar password">
+                            <input type="submit" id="btnRegistrar" class="contenedor__submit" value="Ingresar">
+                            
+                        </form>
+                    </div>
+                    <!-- SE MOSTRARA UN AVISO EN CASO DE NO SER LLENADOS LOS CAMPOS -->
+                    <div class="aviso" id="aviso"></div>
+                </div>
+            </div>
+        </section>
+
+
+       <script src="../js/index.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="carrito">Agrear al carrito</button>
+    <button id="carritoRetirar">Borrar del carrito</button>
+
+    <script>
+        const carritoBoton = document.getElementById("carrito")
+        const carritoBorrar = document.getElementById("carritoRetirar")
+
+        carritoBoton.onclick= function(){
+            //hace una referecia a la informacion que tengamos, solo se puede guardar texto y quizá archivos
+            window.localStorage.setItem("producto","mi producto")  //setItem=> define un eleento en el local estorage
+        }
+
+        carritoBorrar.onclick= function(){
+            //hace una referecia a la informacion que tengamos, solo se puede guardar texto y quizá archivos
+            window.localStorage.removeItem("producto")  //setItem=> define un eleento en el local estorage
+        }
+    </script>
+</body>
+</html>
