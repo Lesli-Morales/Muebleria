@@ -8,7 +8,7 @@
     </head>
 
     <body class="body-secons">
-        <header class="container">
+        <header class="container" id="container">
             <nav class="main-nav">
                 <ul class="main-nav__list">
                     <li class="main-nav__item">
@@ -17,10 +17,10 @@
                 </ul>
                 <ul class="main-nav__list">
                     <li class="main-nav__item">
-                        <a href="productos.html" class="main-nav__link">Inicio</a>
+                        <a href="#container" class="main-nav__link">Inicio</a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#section-nuevo" class="main-nav__link">Lo más nuevo</a>
+                        <a href="#section-productos" class="main-nav__link">Nuestros productos</a>
                     </li>
                     <li class="main-nav__item">
                         <a href="#section-catalogo" class="main-nav__link">Catálogo</a>
@@ -37,47 +37,15 @@
                 </ul>
                 <button  class=" btn_salir" id="saludo" ></button>
             </nav>
-            <div class="div-container">
+            <div class="div-container" id="div-container">
                 <div class="div-container__info">
                     <h2 class="div-container__h2">Somos los mejores en México</h2>
                     <p class="div-container__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo autem voluptatibus vero nam in. Voluptate voluptatum officiis nisi possimus amet.</p>
                     <a href="#section-catalogo" id="btnContainer" class="div-container__btn">VER CATÁLOGO</a>
                 </div>
-                <img class="div-container__img" src="imagenes/sala1.png" alt="Sillon Beige">
+                <img class="div-container__img" src="../imagenes/sala1.png" alt="Sillon individual">
             </div>
         </header>
-
-
-
-         <!-- LO MÁS NUEVO -->
-         <section id="section-nuevo" class="section-nuevo">
-            <h2 class="section-nuevo__h2">LO MÁS NUEVO</h2>
-            <div class="section-nuevo__div">
-                <div class="section-nuevo__img">
-                    <img src="imagenes/sala1.png" alt="">
-                    <label class="section-nuevo__labelN">Sillón individual</label>
-                    <label class="section-nuevo__label">$5,000</label>
-                </div>
-                
-                <div class="section-nuevo__img">
-                    <img src="imagenes/sala3.png" alt="">
-                    <label class="section-nuevo__labelN">Set mesas de centro</label>
-                    <label class="section-nuevo__label">$5,000</label>
-                </div>
-                
-                <div class="section-nuevo__img">
-                    <img src="imagenes/estudio4.png" alt="">
-                    <label class="section-nuevo__labelN">Escritorio de oficina</label>
-                    <label class="section-nuevo__label">$5,000</label>
-                </div>
-                
-                <div class="section-nuevo__img">
-                    <img src="imagenes/estudio3.png" alt="">
-                    <label class="section-nuevo__labelN">Lampara de escritorio</label>
-                    <label class="section-nuevo__label">$5,000</label>
-                </div>
-            </div>
-        </section>
 
         <!-- NUESTROS PRODUCTOS -->
         <section id="section-productos" class="section-productos">
@@ -121,7 +89,7 @@
         
         
         <!-- CATALOGO -->
-        <section id="section-catalogo">
+        <section class="section-catalogo" id="section-catalogo">
             <h2 class="section-catalogo__h2">CATÁLOGO</h2>
             <div id="productos" class="productos"></div>
         </section>
@@ -137,7 +105,7 @@
         </section>
 
          <!-- FOOTER -->
-         <footer id="footer">
+         <footer class="footer" id="footer">
             <h2>MUEBLES *****</h2>
             <div class="div-redes">
                 <img src="imagenes/face.png" alt="Facebook">

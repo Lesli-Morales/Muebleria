@@ -38,12 +38,12 @@ fetch("http://localhost:1337/muebles")
 
         const nombre = document.createElement("p")
         nombre.classList.add("contenedorInfo-nombre")
-
+        
         nombre.innerText= producto.nombre
         precio.innerText= producto.precio
 
         link.innerText= "VER PRODUCTO"
-        link.href="/front/detalles.html?id="+producto.id
+        link.href="/index/detalles.html?id="+producto.id
 
 
         contenedor.appendChild(nombre)
@@ -51,7 +51,15 @@ fetch("http://localhost:1337/muebles")
         if(producto.imagen){
             const imagen = document.createElement("img")
             imagen.src = "http://localhost:1337"+producto.imagen.url
-            contenedor.appendChild(imagen)
+            contenedor.appendChild(imagen)   
+            
+            const nuevo = document.getElementById("section-nuevo__div")
+            if(producto.id==="7"){
+                const sillon = document.getElementById("div-container__img")
+                sillon.appendChild(imagen)
+            }
+
+            
         }
 
         contenedorInfo.appendChild(precio)

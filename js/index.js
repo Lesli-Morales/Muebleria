@@ -23,7 +23,7 @@ const aviso = document.getElementById("aviso")
             }else{
                 localStorage.setItem("token",data.jwt)
                 localStorage.setItem("username",data.user.username)
-                window.location.href="/front/productos.html"
+                window.location.href="/index/productos.html"
 
             }
         }).catch(error=> console.log("Error: ",error))
