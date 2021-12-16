@@ -59,7 +59,6 @@ fetch("http://localhost:1337/muebles")
                 sillon.appendChild(imagen)
             }
 
-            
         }
 
         contenedorInfo.appendChild(precio)

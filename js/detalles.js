@@ -1,24 +1,27 @@
 const query = window.location.search
-console.log(query);
 
 
 //apartir de un string devuelva parametros del query
-const parametros = new URLSearchParams
-console.log(parametros.get("id"));
+const parametros = new URLSearchParams(query)
+console.log(parametros);
 
-const id= parametros.get("id")
+const id= parseInt(parametros.get("id"))
+console.log(id);
 
 const divDetalles = document.getElementById("detalles")
-fetch("http://localhost:1337/muebles",id)
+fetch(`http://localhost:1337/muebles/${id}`)
     .then(resultado=>resultado.json())
     .then(conversion=>{
-        const h2 = document.createElement("h2")
-        const p = document.createElement("p")
+        const nombre = document.createElement("h2")
+        const descripcion = document.createElement("p")
+        const imagen = document.createElement("img")
 
-        h2.innerText = conversion.nombre
-        p.innerText = conversion.descripcion
+        imagen.src="http://localhost:1337"+conversion.imagen.url
+        nombre.innerText = conversion.nombre
+        descripcion.innerText = conversion.descripcion
         
-        divDetalles.appendChild(h2)
-        divDetalles.appendChild(p)
+        divDetalles.appendChild(imagen)
+        divDetalles.appendChild(nombre)
+        divDetalles.appendChild(descripcion)
 
 })
