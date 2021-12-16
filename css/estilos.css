@@ -92,13 +92,15 @@ html{
     width: 400px;
 }
 
-.contenedor__form, .contenedor-2__form{
+.contenedor__form, 
+.contenedor-2__form{
     display: flex;
     flex-direction: column;
     padding: 10px 20px;
 }
 
-.contenedor__form label, .contenedor-2__form label{
+.contenedor__form label, 
+.contenedor-2__form label{
     font-size: 20px;
 
 }
@@ -242,7 +244,7 @@ html{
     font-weight: 400;
     margin-top: 30px;
     padding: 10px 30px;
-    border-radius: 20px;
+    border-radius: 1rem;
     outline: 1px solid rgb(133, 66, 19);
     outline-offset: 2px;
     cursor: pointer;
@@ -443,4 +445,44 @@ html{
 footer label{
     margin-left: 20px;
     color: rgb(97, 104, 110);
+}
+
+
+
+/* ****************************************** DETALLES ******************************************* */
+
+.container-detalles {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 4rem;
+}
+
+
+.container-detalles img {
+    margin-left: auto;
+    margin-right: auto;
+}
+.container-detalles__info {
+    margin-right: 1rem;
+    padding-right: 2rem;
+}
+.container-detalles__info h2{
+    text-align: left;
+    font-size: 3rem;
+    color: chocolate;
+}
+
+.container-detalles__info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.container-detalles__info p {
+    margin-bottom: 2rem;
+}
+
+.container-detalles__info button {
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+
 }

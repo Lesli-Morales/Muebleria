@@ -1,6 +1,4 @@
 const boton = document.getElementById("saludo")
-const btnSalir = document.getElementById("btn_salir")
-
 
 if(localStorage.getItem("username")){
     const saludo = "Cerrar sesión"
@@ -9,11 +7,15 @@ if(localStorage.getItem("username")){
     boton.onclick = ()=>{
         localStorage.removeItem("token")
         localStorage.removeItem("username")
-        window.location.href="/front/index.html"
+        window.location.href="/index/login.html"
     }
 }else{
-    const p = document.createElement("p")
-    p.innerText="Inicia sesión"
+    const saludo = "Iniciar sesión"
+    boton.innerText = saludo
+
+    boton.onclick = ()=>{
+        window.location.href="/index/login.html"
+    }
 }
 
 

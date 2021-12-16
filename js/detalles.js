@@ -1,5 +1,22 @@
-const query = window.location.search
+const boton = document.getElementById("saludo")
 
+if(localStorage.getItem("username")){
+    const saludo = "Cerrar sesión"
+    boton.innerText= saludo
+    
+    boton.onclick = ()=>{
+        localStorage.removeItem("token")
+        localStorage.removeItem("username")
+        window.location.href="/index/login.html"
+    }
+}
+
+else{
+    alert("Para poder ver el carrito de compra debe de iniciar sesión")
+    window.location.href = "/index/index.html"
+}
+
+const query = window.location.search
 
 //apartir de un string devuelva parametros del query
 const parametros = new URLSearchParams(query)
@@ -9,19 +26,35 @@ const id= parseInt(parametros.get("id"))
 console.log(id);
 
 const divDetalles = document.getElementById("detalles")
+divDetalles.classList.add("container-detalles")
 fetch(`http://localhost:1337/muebles/${id}`)
     .then(resultado=>resultado.json())
     .then(conversion=>{
-        const nombre = document.createElement("h2")
-        const descripcion = document.createElement("p")
+        const detallesInfo = document.createElement("div")
+        
         const imagen = document.createElement("img")
+        const nombre = document.createElement("h2")
+        const precio = document.createElement("h3")
+        const descripcion = document.createElement("p")
+        const btnAgregar = document.createElement("button")
 
+        nombre.classList.add("contenedorInfo-nombre")
+        detallesInfo.classList.add("container-detalles__info")
+        precio.classList.add("contenedorInfo-precio")
+        btnAgregar.classList.add("div-container__btn")
+        
         imagen.src="http://localhost:1337"+conversion.imagen.url
         nombre.innerText = conversion.nombre
+        precio.innerText = conversion.precio
         descripcion.innerText = conversion.descripcion
+        btnAgregar.innerText = "Agregar a carrito"
+
         
         divDetalles.appendChild(imagen)
-        divDetalles.appendChild(nombre)
-        divDetalles.appendChild(descripcion)
+        detallesInfo.appendChild(nombre)
+        detallesInfo.appendChild(precio)
+        detallesInfo.appendChild(descripcion)
+        detallesInfo.appendChild(btnAgregar)
+        divDetalles.appendChild(detallesInfo)
 
 })
