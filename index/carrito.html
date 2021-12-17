@@ -12,7 +12,7 @@
     <nav class="main-nav">
         <ul class="main-nav__list">
             <li class="main-nav__item">
-                <a href="productos.html" class="main-nav__link">Muebles *****</a>  
+                <a href="index.html" class="main-nav__link">Muebles *****</a>  
             </li>
         </ul>
         <ul class="main-nav__list">
@@ -29,36 +29,23 @@
                 <a href="carrito.html" class="main-nav__link">Carrito</a>
             </li>
             <li class="main-nav__item">
-                <a href="usuario.html" class="main-nav__link">Usuario</a>
-            </li>
-            <li class="main-nav__item">
                 <a href="#footer" class="main-nav__link">Contacto</a>
             </li>
         </ul>
         <button  class=" btn_salir" id="saludo" ></button>
     </nav>
-    
 
-    <script src="../js/carrito.js"></script>
+    <div class="container-carrito" id="container-carrito">
+        <h2 class="div-container__h2">Carrito</h2>
+    </div>
 
-    <!-- <button id="carrito">Agrear al carrito</button>
-    <button id="carritoRetirar">Borrar del carrito</button>
+    <div class="container-pago" id="container-pago">
+        <p></p>
+        <p>Total a pagar: </p>
+    </div>
+  
+   <script src="../js/carrito.js"></script> 
 
-    <script>
-        const carritoBoton = document.getElementById("carrito")
-        const carritoBorrar = document.getElementById("carritoRetirar")
 
-        carritoBoton.onclick= function(){
-            //hace una referecia a la informacion que tengamos, solo se puede guardar texto y quizá archivos
-            window.localStorage.setItem("producto","mi producto")  //setItem=> define un eleento en el local estorage
-        }
-
-        carritoBorrar.onclick= function(){
-            //hace una referecia a la informacion que tengamos, solo se puede guardar texto y quizá archivos
-            window.localStorage.removeItem("producto")  //setItem=> define un eleento en el local estorage
-        }
-    </script> -->
-
-    <script src="../js/carrito.js"></script>
 </body>
 </html>

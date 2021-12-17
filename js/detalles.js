@@ -12,8 +12,12 @@ if(localStorage.getItem("username")){
 }
 
 else{
-    alert("Para poder ver el carrito de compra debe de iniciar sesión")
-    window.location.href = "/index/index.html"
+    const saludo = "Iniciar sesión"
+    boton.innerText = saludo
+    boton.onclick = ()=>{
+        window.location.href="/index/login.html"
+    }
+
 }
 
 const query = window.location.search
@@ -56,5 +60,64 @@ fetch(`http://localhost:1337/muebles/${id}`)
         detallesInfo.appendChild(descripcion)
         detallesInfo.appendChild(btnAgregar)
         divDetalles.appendChild(detallesInfo)
+
+        const token = localStorage.getItem("token")
+        btnAgregar.onclick= ()=> {
+            if(localStorage.getItem("username")){
+                if(token){
+                    const idCarrito = localStorage.getItem("idCarrito")
+                    if(idCarrito){
+                        fetch("http://localhost:1337/carritos/"+idCarrito,{
+                            headers:{
+                                "Authorization": `Bearer ${token}`,
+                                "Content-Type":"application/json"
+                            }
+                        })
+                        .then(res => res.json())
+                        .then(carrito=>{
+                            const idsProductos = carrito.muebles.map(mueble=>mueble.id)
+                            idsProductos.push(conversion.id)
+                            fetch("http://localhost:1337/carritos/"+idCarrito,{
+                                method: "PUT",
+                                headers:{
+                                    "Authorization": `Bearer ${token}`,
+                                    "Content-Type":"application/json"
+                                },
+                                body:JSON.stringify({
+                                    muebles:idsProductos
+                                })
+                            })
+                            .then(res => res.json())
+                            .then(carrito=>{
+                                console.log("Mi carrito nuevo ",carrito);
+                                alert("Se a agregado correctamnete su producto a carrito :)")
+                            })
+                    })
+                }   
+                else {
+                    fetch("http://localhost:1337/carritos/",{
+                            method: "POST",
+                            headers:{
+                                "Authorization": `Bearer ${token}`,
+                                "Content-Type":"application/json"
+                            },
+                            body:JSON.stringify({
+                                muebles:[conversion.id],
+                                users_permissions_user:1,
+                                cantidad:2
+                            })
+                        })
+                        .then(res => res.json())
+                        .then(carrito=>{
+                            console.log("Mi carrito creado ",carrito);
+                            localStorage.setItem("idCarrito",carrito.id)
+                        })
+                }
+                }
+            }
+            else{
+                alert("Para agregar a carrito debe de iniciar sesión")
+            }
+        }
 
 })

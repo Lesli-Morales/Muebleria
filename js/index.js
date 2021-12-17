@@ -23,6 +23,9 @@ const aviso = document.getElementById("aviso")
             }else{
                 localStorage.setItem("token",data.jwt)
                 localStorage.setItem("username",data.user.username)
+                if(data.user.carrito){
+                    localStorage.setItem("idCarrito",data.user.carrito.id)
+                }
                 window.location.href="/index/index.html"
 
             }

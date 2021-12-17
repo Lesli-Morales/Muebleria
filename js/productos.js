@@ -7,6 +7,7 @@ if(localStorage.getItem("username")){
     boton.onclick = ()=>{
         localStorage.removeItem("token")
         localStorage.removeItem("username")
+        localStorage.removeItem("idCarrito")
         window.location.href="/index/login.html"
     }
 }else{
