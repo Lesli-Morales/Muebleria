@@ -8,7 +8,7 @@ if(localStorage.getItem("username")){
         localStorage.removeItem("token")
         localStorage.removeItem("username")
         localStorage.removeItem("idCarrito")
-        window.location.href="/index/login.html"
+        window.location.href="/index/index.html"
     }
 }else{
     const saludo = "Iniciar sesión"

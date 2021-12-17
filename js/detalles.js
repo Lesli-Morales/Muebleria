@@ -7,7 +7,7 @@ if(localStorage.getItem("username")){
     boton.onclick = ()=>{
         localStorage.removeItem("token")
         localStorage.removeItem("username")
-        window.location.href="/index/login.html"
+        window.location.href="/index/index.html"
     }
 }
 
