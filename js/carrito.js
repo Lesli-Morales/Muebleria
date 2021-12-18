@@ -65,7 +65,6 @@ if(token){
             divTotal.appendChild(pago)
             
             divCarrito.appendChild(carrito)
-            console.log("PAgo: ",[x]+" "+total);
         }
     })
     })
