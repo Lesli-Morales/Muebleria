@@ -44,6 +44,7 @@ fetch("http://localhost:1337/muebles")
         
         nombre.innerText= producto.nombre
         precio.innerText= producto.precio
+        
 
         link.innerText= "VER PRODUCTO"
         link.href="/index/detalles.html?id="+producto.id
